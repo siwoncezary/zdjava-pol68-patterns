@@ -7,14 +7,10 @@ import java.util.List;
 public class ObserverDemo {
     public static void main(String[] args) {
         GameBoard game = new GameBoard();
-        game.addObserver(m -> {
-            System.out.println("Wykonano ruch + " + m);
-        });
-
+        Player player1 = new Player("ADAM");
+        Player player2 = new Player("EWA");
+        game.addObserver(player1);
+        game.addObserver(player2);
         game.makeMove(10, 11);
-
-        List<String> cities = Arrays.asList("A","B","C");
-        List<String> copy = new ArrayList<>(cities);
-        copy.add("F");
     }
 }
